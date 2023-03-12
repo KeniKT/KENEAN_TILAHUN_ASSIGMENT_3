@@ -30,7 +30,7 @@ class AsbezaRepository {
   }
 
   removeItemFromCart(int id) {
-    if (purchasedItems[id] == 1) {
+    if (purchasedItems[id][1] == 1) {
       purchasedItems.remove(id);
     } else {
       purchasedItems[id][1] -= 1;
