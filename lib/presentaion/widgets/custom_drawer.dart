@@ -16,7 +16,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Drawer(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.blueGrey,
           child: Container(
             margin: const EdgeInsets.all(10),
             child: ListView.builder(
@@ -35,6 +35,8 @@ class CustomDrawer extends StatelessWidget {
                         if (item["title"] == "HOME") {
                           BlocProvider.of<AsebezaBlocBloc>(context)
                               .add(FetchAsebezaBlocEvent());
+                        } else if (item["title"] == "HISTORY") {
+                          BlocProvider.of<AsebezaBlocBloc>(context).add(GetItemBlocEvent());
                         }
                         Navigator.pushNamed(context, item["route"].toString());
                       },

@@ -58,7 +58,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blueGrey,
         appBar: const CustomAppBar(),
         drawer: CustomDrawer(),
         body: Center(

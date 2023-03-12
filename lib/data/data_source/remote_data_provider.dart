@@ -15,8 +15,6 @@ class ApiServiceProvider {
     if (response.statusCode == 200) {
       final result = json.decode(response.body) as List;
       final asbezas = result.map((res) => Asebeza.fromJson(res)).toList();
-      print("from data layer");
-      print(asbezas);
       return asbezas;
     } else {
       throw Exception('Failed to load');

@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blueGrey,
         appBar: CustomAppBar(),
         drawer: CustomDrawer(),
         body: BlocBuilder<AsebezaBlocBloc, AsebezaBlocState>(
