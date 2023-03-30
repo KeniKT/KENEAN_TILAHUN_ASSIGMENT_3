@@ -24,21 +24,10 @@ class _HomePageState extends State<HomePage> {
         drawer: CustomDrawer(),
         body: BlocBuilder<AsebezaBlocBloc, AsebezaBlocState>(
           builder: (context, state) {
+            
             if (state is AsebezaBlocInitial) {
-              return Center(
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(200, 50),
-                      alignment: Alignment.center,
-                      elevation: 0),
-                  onPressed: () {
-                    BlocProvider.of<AsebezaBlocBloc>(context)
+              BlocProvider.of<AsebezaBlocBloc>(context)
                         .add(FetchAsebezaBlocEvent());
-                  },
-                  icon: const Icon(Icons.shopping_basket_rounded),
-                  label: const Text("GET YOU ASBEZA"),
-                ),
-              );
             }
             if (state is AsbezaBlockLoading) {
               return const Center(
@@ -91,6 +80,14 @@ class _HomePageState extends State<HomePage> {
                             ),
                             IconButton(
                                 onPressed: () {
+                                  setState(() {
+                                    for (var element in state.asbeza) {
+                                      if (element.id == asbezaVal.id) {
+                                        
+                                        continue;
+                                      }
+                                    }
+                                  });
                                   BlocProvider.of<AsebezaBlocBloc>(context).add(
                                       AddItemBlocEvent(
                                           item: Item(
